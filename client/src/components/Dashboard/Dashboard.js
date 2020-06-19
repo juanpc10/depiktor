@@ -69,7 +69,7 @@ const chartJSOptions = {
         </div>
 
         <div className="chart-style-container">
-          <p>Chart Style</p>
+          <p >Chart Style</p>
           <Select options={chartOptions} className="chart-style-select-dropdown" 
           placeholder="Select Chart Style..." value={selectLabel} onChange={handleSelectedLabel}>
 
