@@ -1,5 +1,6 @@
 import React, {useState, useEffect} from 'react';
 import ApiClient from '../ApiClient';
+
 import './Dashboard.css';
 import Spinner from './Spinner';
 
@@ -8,6 +9,8 @@ import './React-Tabs.css';
 import {Line, Bar, Radar} from 'react-chartjs-2';
 import Select from 'react-select';
 import ReactSlider from 'react-slider';
+
+
 
 export default function Dashboard() {
 
@@ -81,7 +84,6 @@ const chartJSOptions = {
             trackClassName="options-track"
             min={0}
             max={maxLabel}
-            // invert={true}
             value={selectTime}
             onAfterChange={handleSelectedTime}
             renderThumb={(props, state) => <div {...props}>{state.valueNow}</div>}>    

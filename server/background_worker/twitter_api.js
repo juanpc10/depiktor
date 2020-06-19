@@ -10,8 +10,8 @@ const Count = db.count;
 const get = util.promisify(request.get);
 const post = util.promisify(request.post);
 
-const consumer_key = process.env.TWITTER_CONSUMER_KEY; // Add your API key here
-const consumer_secret = process.env.TWITTER_CONSUMER_SECRET; // Add your API secret key here
+const consumer_key = 'Y9Ojbsb7rRi9BPI9B4M4MS6qu'; // Add your API key here
+const consumer_secret = 'ngD0nRawh1wmEDGso1MLB8t7N35XcUOBauzdS1wB2mWrIzDq1f'; // Add your API secret key here
 
 const bearerTokenURL = new URL('https://api.twitter.com/oauth2/token');
 const searchURL = new URL('https://api.twitter.com/labs/2/tweets/search');
