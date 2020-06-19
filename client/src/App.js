@@ -1,8 +1,8 @@
 import React from 'react';
 import './App.css';
 
-import Nav from './components/Nav';
-import Dashboard from './components/Dashboard';
+import Nav from './components/Nav/Nav';
+import Dashboard from './components/Dashboard/Dashboard';
 
 function App() {
 
