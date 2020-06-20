@@ -10,8 +10,8 @@ const Count = db.count;
 const get = util.promisify(request.get);
 const post = util.promisify(request.post);
 
-const consumer_key = process.env.TWITTER_CONSUMER_KEY; // Add your API key here
-const consumer_secret = process.env.TWITTER_CONSUMER_SECRET; // Add your API secret key here
+const consumer_key = 'Eb2Rnee1N4vyOEipxv8I4yqP2'; // Add your API key here
+const consumer_secret = 'cFJHHPcrxBd3eaGhsdKqY539Z2PNnD2ix5nPOs5ESbfr4XjJIR'; // Add your API secret key here
 
 const bearerTokenURL = new URL('https://api.twitter.com/oauth2/token');
 const searchURL = new URL('https://api.twitter.com/labs/2/tweets/search');
@@ -66,7 +66,7 @@ async function twitterApiFetch() {
       bearer: token,
     },
     headers: {
-      'User-Agent': 'Depiktor App',
+      'Connection': 'keep-alive',
     },
     json: true,
   };
@@ -75,8 +75,8 @@ async function twitterApiFetch() {
     try {
       let res = await get(requestConfig);
       //uncomment to see request status and body
-      console.log(res.statusCode);
-      console.log(res.body);
+      // console.log(res.statusCode);
+      // console.log(res.body);
       if (res.statusCode !== 200) {
         throw new Error(res.json);
         return;
