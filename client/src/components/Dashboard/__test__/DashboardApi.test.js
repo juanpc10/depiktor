@@ -9,10 +9,10 @@ import {
   screen,
   cleanup
 } from "@testing-library/react";
-import Dashboard from "./Dashboard";
+import Dashboard from "../Dashboard";
 
-import api from "../ApiClient.js";
-jest.mock('../ApiClient.js');
+import api from "../../../ApiClient.js";
+jest.mock('../../../ApiClient.js');
 
 
 describe("loads api data correctly", () => {
