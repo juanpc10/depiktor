@@ -66,7 +66,7 @@ async function twitterApiFetch() {
       bearer: token,
     },
     headers: {
-      'User-Agent': 'Depiktor App',
+      'Connection': 'keep-alive',
     },
     json: true,
   };
@@ -75,8 +75,8 @@ async function twitterApiFetch() {
     try {
       let res = await get(requestConfig);
       //uncomment to see request status and body
-      console.log(res.statusCode);
-      console.log(res.body);
+      // console.log(res.statusCode);
+      // console.log(res.body);
       if (res.statusCode !== 200) {
         throw new Error(res.json);
         return;
