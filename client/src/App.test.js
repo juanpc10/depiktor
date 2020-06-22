@@ -9,3 +9,9 @@ it ("Renders without crashing", () => {
   ReactDOM.render(<App />, div)
   ReactDOM.unmountComponentAtNode(div);
 })
+
+test('renders header', () => {
+  const { getByText } = render(<App />);
+  const linkElement = getByText('depiktor');
+  expect(linkElement).toBeInTheDocument();
+});

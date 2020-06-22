@@ -57,9 +57,9 @@ async function getAll (_, res) {
       };
       return acc;
     }, {});
-    res.json(require('./response.json'));
-    // res.json(serializedTech);
-    res.status(200).send();
+    
+    res.json(require('./mock.json'));
+    // res.status(200).send();
   } catch (error) {
     console.log(error);
   }
