@@ -12,18 +12,24 @@ import ReactSlider from 'react-slider';
 
 
 
-export default function Dashboard() {
+export default function Dashboard({tech}) {
 
+  
   const [loadStatus, setLoadStatus] = useState(true);
   const [technologies, setTechnologies] = useState({});
   const [selectLabel, setSelectLabel] = useState({value: 'line', label: 'Line'});
   const [selectTime, setSelectTime] = useState(0);
   const [maxLabel, setMaxLabel] = useState(0);
-
+  
   useEffect(() => {
-    ApiClient.getTechnologies()
+    if (tech) {
+      setTechnologies(tech);
+      setLoadStatus(false);
+    } else {
+      ApiClient.getTechnologies()
       .then(technologies => {setTechnologies(technologies); setMaxLabel(technologies.Object.keys(technologies)[0].labels.length);})
       .then(()=> setLoadStatus(false))
+    }
     }, []);
 
 
@@ -122,7 +128,7 @@ const chartJSOptions = {
         }
         </Tabs>
         :
-        <Spinner/>
+        <Spinner />
       }
 
     </div>
