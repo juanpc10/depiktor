@@ -3,7 +3,7 @@ import './Spinner.css';
 
 
 export default () => (
-  <div className="spinner">
+  <div className="spinner" data-testid="spinner">
     <div className="rect1"></div>
     <div className="rect2"></div>
     <div className="rect3"></div>
