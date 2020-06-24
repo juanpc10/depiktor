@@ -27,11 +27,14 @@ export default function Dashboard({tech}) {
       setLoadStatus(false);
     } else {
       ApiClient.getTechnologies()
-      .then(technologies => {setTechnologies(technologies); setMaxLabel(technologies.Object.keys(technologies)[0].labels.length);})
-      .then(()=> setLoadStatus(false))
-    }
-    }, []);
-
+        .then(technologies => {setTechnologies(technologies); setMaxLabel(technologies[Object.keys(technologies)[0]].labels.length);})
+        .then(()=> setLoadStatus(false))
+    }          // eslint-disable-next-line
+  }, []);
+  // .then(technologies => {setTechnologies(technologies); setMaxLabel(technologies.Object.keys(technologies)[0].labels.length);})
+  // .then(technologies => {setTechnologies(technologies); setMaxLabel(technologies.Platforms.labels.length);})
+  
+  
 
   function handleSelectedLabel(e) {
     setSelectLabel(e);
@@ -115,14 +118,10 @@ const chartJSOptions = {
 
         {
           Object.values(technologies).map(techType => 
-            <TabPanel key={'panel-' + techType.labels[0]} >
-
-              {{
-                'Line': (<Line data={techType} options={chartJSOptions}></Line>),
-                'Bar': (<Bar data={techType} options={chartJSOptions}></Bar>),
-                'Radar': (<Radar data={techType} options={chartJSOptions}></Radar>)
-              } [selectLabel.label]}
-
+            <TabPanel key={'panel-' + techType.labels[0]} >{{
+              'Line': (<Line data={techType} options={chartJSOptions}></Line>),
+              'Bar': (<Bar data={techType} options={chartJSOptions}></Bar>),
+              'Radar': (<Radar data={techType} options={chartJSOptions}></Radar>)}[selectLabel.label]}
             </TabPanel>
             )
         }

@@ -1,4 +1,4 @@
-'use strict'
+
 
 //TODO: Change to env variable 
 
@@ -9,30 +9,25 @@ function getTechnologies() {
   return fetchRequest('/');
 }
 
-//post request to create a new account 
-function createAccount(user) {
+// //post request to create a new account 
+// function createAccount(user) {
+// }
 
-}
+// //post request to login => results in a get request to profile page
+// function login(user) {
+// }
 
-//post request to login => results in a get request to profile page
-function login(user) {
+// //get the user profile that logged in
+// function getProfile() {
+// }
 
-}
+// //post request to add a new data source, only when logged
+// function addTopic(topic) {
+// }
 
-//get the user profile that logged in
-function getProfile() {
-
-}
-
-//post request to add a new data source, only when logged
-function addTopic(topic) {
-
-}
-
-//post request to logout
-function logout() {
-
-}
+// //post request to logout
+// function logout() {
+// }
 
 //fetch request 
 function fetchRequest(path, options) {

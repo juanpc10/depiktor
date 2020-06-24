@@ -9,7 +9,7 @@ import {
   screen,
   cleanup,
   waitForDomChange,
-  getAllByTestId
+  getAllByTestId,
 } from "@testing-library/react";
 import Dashboard from "../Dashboard";
 
