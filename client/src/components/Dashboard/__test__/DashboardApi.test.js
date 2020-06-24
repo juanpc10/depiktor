@@ -9,13 +9,12 @@ import {
   screen,
   cleanup,
   waitForDomChange,
-  getAllByTestId
+  getAllByTestId,
 } from "@testing-library/react";
 import Dashboard from "../Dashboard";
 
 import api from "../../../ApiClient.js";
-jest.mock('../../../ApiClient.js');
-
+jest.mock("../../../ApiClient.js");
 
 const fakeTech = {
   Tests1: {
@@ -78,39 +77,37 @@ describe("loads api data correctly", () => {
     api.getTechnologies.mockResolvedValue(fakeTech);
     apicall = await api.getTechnologies();
     expect(apicall).toEqual(fakeTech);
+    expect.assertions(1);
   });
-  test('api gets called only once', async () => {
+  test("api gets called only once", async () => {
     api.getTechnologies.mockResolvedValue(fakeTech);
-    const getSpy = jest.spyOn(api, 'getTechnologies');
-    expect(getSpy).toHaveBeenCalledTimes(1);    
-  })
-  test('api data is of right format', () => {
-    Object.keys(apicall).map(key => {
-      fakeTech[key].datasets.map( dataobj => {
-          expect(dataobj).toHaveProperty('label'); 
-          expect(dataobj).toHaveProperty('data');
-          expect(dataobj).toHaveProperty('backgroundColor');
-          expect(dataobj).toHaveProperty('borderColor');
-          expect(dataobj).toHaveProperty('fill');
-        });
+    const getSpy = jest.spyOn(api, "getTechnologies");
+    expect(getSpy).toHaveBeenCalledTimes(1);
+    expect(getSpy).toHaveBeenCalledWith();
+    expect.assertions(2);
+  });
+  test("api data is of right format", () => {
+    Object.keys(apicall).map((key) => {
+      fakeTech[key].datasets.map((dataobj) => {
+        expect(dataobj).toHaveProperty("label");
+        expect(dataobj).toHaveProperty("data");
+        expect(dataobj).toHaveProperty("backgroundColor");
+        expect(dataobj).toHaveProperty("borderColor");
+        expect(dataobj).toHaveProperty("fill");
       });
-  })
+    });
+    expect.assertions(20);
+  });
 
-  describe('render testing', () => {
-    test('reders', async ()  => {
-      const { getByText, getByTestId, queryByText } = render(<Dashboard tech={fakeTech} />);
+  describe("render testing", () => {
+    test("reders", async () => {
+      const { getByText, getByTestId, queryByText } = render(
+        <Dashboard tech={fakeTech} />
+      );
       // expect(getByTestId("spinner")).toBeInTheDocument();
       // await waitForDomChange();
       expect(getByText("Tests1")).toBeInTheDocument();
       expect(getByText("Tests2")).toBeInTheDocument();
-    })
-  })
-    
-    
-    
-
- 
-    
-    
-    
+    });
+  });
 });
