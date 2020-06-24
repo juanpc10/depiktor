@@ -27,10 +27,10 @@ export default function Dashboard({tech}) {
       setLoadStatus(false);
     } else {
       ApiClient.getTechnologies()
-        .then(technologies => {setTechnologies(technologies); setMaxLabel(technologies[Object.keys(technologies)[0]].labels.length);})
+        .then(technologies => {setTechnologies(technologies); console.log(technologies); setMaxLabel(technologies[Object.keys(technologies)[0]].labels.length)})
         .then(()=> setLoadStatus(false))
-    }
-    }, []);
+    }           // eslint-disable-next-line
+  }, []);
 
   function handleSelectedLabel(e) {
     setSelectLabel(e);

@@ -28,19 +28,9 @@ app.use(router);
 //   }
 // })();
 
-const { PORT = 8080 } = process.env;
+const { PORT = 3002 } = process.env;
 const server = app.listen(PORT, () => console.log(`📣 App listening on port ${PORT}`));
 
 module.exports = {
   server
 };
-
-// package.json
-// "type": "module",
-// "keywords": [
-//   "ES",
-//   "MODULES",
-//   "NODE",
-//   "MODULES",
-//   "JS"
-// ],
