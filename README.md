@@ -23,6 +23,13 @@ You can find the live version [here](https://depiktor.herokuapp.com).
 - PostgreSQL
 - NodeJS
 
+### Testing
+
+- Jest
+- Supertest
+- Jasmine
+- Mocha
+
 ## Requirements
 
 - Twitter Developer Account
@@ -65,6 +72,9 @@ You can find the live version [here](https://depiktor.herokuapp.com).
 - View the results in the browser. :chart_with_upwards_trend:
 
 ## Testing
+
+- In the client folder run `npm test`, tests will be updated as you save files
+- In the server folder run `npm test`, tests will be updated as you save files
 
 ## Roadmap
 
