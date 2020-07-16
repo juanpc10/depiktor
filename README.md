@@ -91,6 +91,12 @@ You can find the live version [here](https://depiktor.herokuapp.com).
 
 Pull requests are welcome. For major changes, please open an issue first to discuss what you would like to change.
 
+## Developers
+
+- Nils Wernecke - [GitHub](https://github.com/locomocoroco) - [LinkedIn](https://www.linkedin.com/in/niwern/)
+- Juan Carrillo - [GitHub](https://github.com/juanpc10) - [LinkedIn](https://www.linkedin.com/in/juanpc10/)
+- Lena - [GitHub](https://github.com/LenaDeor)
+
 ## License
 
 [MIT](https://choosealicense.com/licenses/mit/)
